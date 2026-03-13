@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+std::pair<int, int> findDigits(int N, int K, int M) {
+    long long result =pow(N, K);
+    string resultStr = to_string(result);
+    string firstMDigits = resultStr.substr(0, M);
+    string lastMDigits = resultStr.substr(resultStr.length() - M);
+
+    return;
+}
+
+int main() {
+
+    int N1 = 2345, K1 = 3, M1 = 3;
+    pair<int, int> result1 = findDigits(N1, K1, M1);
+    cout << result1.first << " " << result1.second << std::endl;
+    int N2 = 12, K2 = 12, M2 = 4;
+    pair<int, int> result2 = findDigits(N2, K2, M2);
+    cout << result2.first << " " << result2.second <<endl;  
+
+    return 0;
+}
