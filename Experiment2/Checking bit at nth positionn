@@ -1,0 +1,18 @@
+#include<iostream>
+using namespace std;
+int main(){
+int number;
+int position;
+cout<<"Enter a number";
+cin>>number;
+cout<<"Enter a bit position to check:";
+cin>>position;
+int n-1<<position
+if(number & n){
+cout<<"Bit at position"<<position<<"is set"<<endl;
+}
+else{
+cout<<"Bit is at position"<<position<<"is clear"<<endl;
+}
+return 0;
+}
