@@ -1,18 +1,15 @@
 #include<iostream>
 using namespace std;
-int main(){
-int number;
-int position;
-cout<<"Enter a number";
-cin>>number;
-cout<<"Enter a bit position to check:";
-cin>>position;
-int n-1<<position
-if(number & n){
-cout<<"Bit at position"<<position<<"is set"<<endl;
-}
+bool bit_check(int n, int b) 
+{
+if((n& (n<<(b-1)))!=-0)
+cout<<"Set";
 else{
-cout<<"Bit is at position"<<position<<"is clear"<<endl;
+cout<<"UnSet";
 }
+int main()
+{
+int a=4, c=3;
+bit_check (a,c);
 return 0;
 }
