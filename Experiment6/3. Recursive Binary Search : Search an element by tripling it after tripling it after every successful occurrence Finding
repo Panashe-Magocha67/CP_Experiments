@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+int recursiveBinarySearch(int arr[], int left, int right, int key)
+{
+if (left > right)
+return -1;
+
+int mid = left + (right - left) / 2;
+
+if (arr[mid] == key)
+return mid;
+
+if (arr[mid] > key)
+return recursiveBinarySearch(arr, left, mid - 1, key);
+
+return recursiveBinarySearch(arr, mid + 1, right, key);
+}
+
+void searchTriple(int arr[], int n, int key)
+{
+int pos = recursiveBinarySearch(arr, 0, n - 1, key);
+
+if (pos == -1)
+{
+cout << key << " not found. Stopping.\n";
+return;
+}
+
+cout << key << " found at index " << pos << endl;
+
+searchTriple(arr, n, key * 3);
+}
+
+int main()
+{
+int arr[] = {1, 2, 3, 6, 9, 18, 27, 54};
+int n = sizeof(arr) / sizeof(arr[0]);
+
+int key = 3;
+
+searchTriple(arr, n, key);
+
+return 0;
+}
