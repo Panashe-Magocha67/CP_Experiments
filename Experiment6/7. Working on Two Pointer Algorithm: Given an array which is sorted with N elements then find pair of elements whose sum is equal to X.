@@ -1,0 +1,35 @@
+
+#include <iostream>
+using namespace std;
+
+bool isPair(int arr[], int n, int x) 
+{
+    int i = 0, j = n - 1;
+    while (i < j) {
+        if (arr[i] + arr[j] == x)
+            return true; 
+        else if (arr[i] + arr[j] < x)
+            i++; 
+        else
+            j--;
+}
+
+    return false;
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5, 6, 8};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int x = 10;
+
+    if (isPair(arr, n, x))
+ {
+        cout << "Pair with sum " << x << " exists in the array." << endl;
+    } 
+else 
+{
+        cout << "No pair with sum " << x << " exists in the array." << endl;
+    }
+
+    return 0;
+}
