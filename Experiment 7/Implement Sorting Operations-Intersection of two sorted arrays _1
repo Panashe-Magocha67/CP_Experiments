@@ -1,0 +1,33 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+vector<int> intersection(vector<int>& a, vector<int>& b) {
+    vector<int> res; 
+    int m = a.size(); 
+    int n = b.size(); 
+    
+    for(int i = 0; i < m; i++) {
+      
+        
+        if(i > 0 && a[i - 1] == a[i])
+            continue;
+       
+        for(int j = 0; j < n; j++) {
+            if(a[i] == b[j]) {
+                res.push_back(a[i]);
+                break; 
+            }
+        }
+    }
+    return res;
+}
+
+int main() {
+    vector<int> a = {3, 5, 10, 10, 10, 15, 15, 20};
+    vector<int> b = {5, 10, 10, 15, 30};
+    vector<int> res = intersection(a, b);    
+    for (int x : res) {
+        cout << x << " ";
+    }
+}
