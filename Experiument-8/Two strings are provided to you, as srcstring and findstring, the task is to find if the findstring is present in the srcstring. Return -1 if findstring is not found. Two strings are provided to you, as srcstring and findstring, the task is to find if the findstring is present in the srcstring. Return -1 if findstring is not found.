@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+int findSubstring(string &txt, string &pat) {
+    int n = txt.length();
+    int m = pat.length();
+    for (int i = 0; i <= n - m; i++) {
+        int j;
+        for (j = 0; j < m; j++) {
+            if (txt[i + j] != pat[j]) {
+                break;
+            }
+        }
+
+        if (j == m) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+int main() {
+    string txt = "WORLD";
+    string pat = "RLD";
+    cout << findSubstring(txt, pat);
+
+    return 0;
+}
