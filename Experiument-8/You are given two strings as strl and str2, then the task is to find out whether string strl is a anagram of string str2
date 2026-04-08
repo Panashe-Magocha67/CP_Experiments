@@ -1,32 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool areAnagram(string str1, string str2) {
-
-    if (str1.length() != str2.length()) {
+bool isAnagram(string s1, string{
+    if (s1.length() != s2.length()) {
         return false;
     }
-
-    sort(str1.begin(), str1.end());
-    sort(str2.begin(), str2.end());
-
-    for (int i = 0; i < str1.length(); i++) {
-        if (str1[i] != str2[i]) {
-            return false;
-        }
-    }
-
-    return true;
+    sort(s1.begin(), s1.end());
+    sort(s2.begin(), s2.end());
+    return s1 == s2;
 }
 
 int main() {
-    string str1 = "ABCC";
-    string str2 = "CBAC";
+    string s1 = "ABCC";
+    string s2 = "CBAC";
 
-    if (areAnagram(str1, str2))
+    if (isAnagram(s1, s2)) {
         cout << "The two strings are anagrams of each other";
-    else
-        cout << "The two strings are not anagrams of each other";
+    } else {
+        cout << "The two strings are NOT anagrams";
+    }
 
     return 0;
 }
