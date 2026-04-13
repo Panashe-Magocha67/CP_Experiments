@@ -26,6 +26,6 @@ void isPalindrome (string str) {
 int main() {
     
   	isPalindrome("papa");
-    isPalindrome("ABCD");            
+    isPalindrome("ABCDCBA");            
     return 0;
 }
