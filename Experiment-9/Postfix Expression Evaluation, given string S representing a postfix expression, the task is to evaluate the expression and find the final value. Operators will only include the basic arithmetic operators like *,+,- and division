@@ -18,7 +18,7 @@ int evaluatePostfix(vector<string>& arr) {
         if (isdigit(token[0]) || (token.size() > 1 && token[0] == '-')) {
             st.push(stoi(token));
         } 
-        r
+    
         else {
             int val1 = st.top(); st.pop(); 
             int val2 = st.top(); st.pop(); 
