@@ -1,6 +1,6 @@
 #include <iostream>
 #define SIZE 5
-
+using namespace std;
 class Queue {
     int arr[SIZE];
     int front, rear;
@@ -21,7 +21,7 @@ public:
 
     void enqueue(int value) {
         if (isFull()) {
-            std::cout << "Queue Overflow\n";
+            cout << "Queue Overflow\n";
             return;
         }
         if (front == -1) front = 0;
@@ -30,21 +30,21 @@ public:
 
     void dequeue() {
         if (isEmpty()) {
-            std::cout << "Queue Underflow\n";
+            cout << "Queue Underflow\n";
             return;
         }
-        std::cout << "Dequeued: " << arr[front++] << "\n";
+        cout << "Dequeued: " << arr[front++] << "\n";
     }
 
     void display() {
         if (isEmpty()) {
-            std::cout << "Queue is empty\n";
+            cout << "Queue is empty\n";
             return;
         }
-        std::cout << "Queue elements: ";
+        cout << "Queue elements: ";
         for (int i = front; i <= rear; i++)
-            std::cout << arr[i] << " ";
-        std::cout << "\n";
+            cout << arr[i] << " ";
+        cout << "\n";
     }
 };
 
